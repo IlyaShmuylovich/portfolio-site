@@ -1,0 +1,425 @@
+body {
+  margin: 0; /* remove default page margins */
+  font-family: 'Roboto', sans-serif;
+  color: #2d3436;
+  background: #f6f7fb;
+  scroll-behavior: smooth; /* smooth scrolling for better UX */
+}
+
+/****************   Nav Section **********************/
+nav {
+  background-color: #2f3e46;
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  display: flex; /* make nav a flex parent */
+  justify-content: space-between; /* separate name and contact link */
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+nav a { 
+  color: #ffffff; 
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+nav a:hover {
+  background-color: rgba(108, 92, 231, 0.8);
+}
+
+/***********************  Footer Section   **************************/
+footer {
+  background: linear-gradient(135deg, #2f3e46 0%, #3d5a6b 100%);
+  color: #ffffff;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-content p {
+  margin: 0.25rem 0;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  font-style: italic;
+}
+
+/*********** Splash Page ************************/
+header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 3rem 1rem;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="white" opacity="0.1"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+header h1 {
+  font-family: 'Montserrat', sans-serif; /* Google font */
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+  color: #ffffff; /* explicit color number */
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%; /* headshot border radius */
+  border: 5px solid rgba(255,255,255,0.9); /* border */
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+header img:hover {
+  transform: scale(1.05);
+}
+
+.address {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+.tagline {
+  margin: 0.5rem auto 0;
+  font-style: italic;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  font-size: 1.05rem;
+}
+
+/************* Sections ********************/
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+main section {
+  margin-bottom: 2.5rem;
+}
+
+hr { border: none; border-top: 1px solid #e0e0e0; margin: 1rem 0; }
+
+section h3 {
+  font-family: 'Montserrat', sans-serif; /* Google font */
+  color: #2d3436; /* color number */
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.section-icon {
+  font-size: 1.3rem;
+}
+
+section dl {
+  display: grid; /* description lists use grid layout */
+  grid-template-columns: 150px 1fr;
+  gap: 1rem 1.5rem;
+  margin: 0;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+section dt {
+  font-weight: 700;
+  color: #667eea;
+  font-family: 'Montserrat', sans-serif;
+}
+
+section dd {
+  margin: 0;
+  color: #2d3436;
+  line-height: 1.6;
+}
+
+section ul {
+  list-style: square; /* change default style */
+  padding-left: 1.25rem;
+}
+
+section a { color: #0984e3; text-decoration: none; }
+section a:hover { color: #74b9ff; text-decoration: underline; }
+
+/**************   About Section   *****************/
+#about {
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #667eea;
+}
+
+.about-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #2d3436;
+  margin: 0;
+}
+
+/**************   Skills Grid   *****************/
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.skill-category {
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  border-top: 3px solid #667eea;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.skill-category h4 {
+  font-family: 'Montserrat', sans-serif;
+  color: #667eea;
+  margin: 0 0 0.75rem 0;
+  font-size: 1.1rem;
+}
+
+.skill-category ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: none;
+}
+
+.skill-category li {
+  padding: 0.35rem 0;
+  color: #2d3436;
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.skill-category li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #667eea;
+  font-weight: bold;
+}
+
+/**************   Projects   *****************/
+.three-col {
+  display: grid; /* create a 3 column layout */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 950px) {
+  .three-col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .three-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* position and appearance */
+  border-radius: 6px 6px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.03);
+}
+
+.card {
+  background: #ffffff;
+  padding: 0.75rem;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06); /* visual separation */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-top: 3px solid transparent;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-top-color: #6c5ce7;
+}
+
+.card h4 {
+  margin: 0;
+  color: #2d3436;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 0;
+  color: #636e72;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.card a {
+  margin-top: auto;
+  font-weight: 600;
+  color: #6c5ce7;
+  text-decoration: none;
+}
+
+.card a:hover {
+  color: #5f3dc4;
+}
+
+/**************   Tech Badges   *****************/
+.tech-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  padding: 0.25rem 0.65rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 4px rgba(102, 126, 234, 0.3);
+}
+
+/**************   Responsiveness   *****************/
+@media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    
+    header img {
+      width: 110px;
+      height: 110px;
+    }
+    
+    section h3 {
+      font-size: 1.3rem;
+    }
+    
+    section dl {
+      grid-template-columns: 120px 1fr;
+      gap: 0.75rem 1rem;
+      padding: 1rem;
+    }
+    
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    nav {
+      flex-direction: column; /* change orientation to vertical */
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .three-col {
+      grid-template-columns: 1fr; /* one column layout for mobile */
+    }
+    
+    header {
+      padding: 2rem 1rem;
+    }
+    
+    main {
+      padding: 1.5rem 0.75rem;
+    }
+    
+    section dl {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+    }
+    
+    section dt {
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+    
+    section dt:first-of-type {
+      margin-top: 0;
+    }
+}
+
+/**************   Contact Page   *****************/
+.one-col {
+  max-width: 680px; /* one column container */
+  margin: 1rem auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+}
+
+input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
+  font-family: inherit;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
+  font-family: inherit;
+  min-height: 120px;
+}
